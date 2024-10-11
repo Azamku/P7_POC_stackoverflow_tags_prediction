@@ -9,6 +9,12 @@ import numpy as np
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 import pickle
 
+
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+
+
 # Charger le modèle anglais de SpaCy
 nlp = spacy.load('en_core_web_sm')
 
