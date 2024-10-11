@@ -18,7 +18,9 @@ tokenizer_save_path = "distilbert_tokenizer"  # Chemin du tokenizer DistilBERT s
 mlb_load_path_drive = "mlb.pkl"  # Chemin du MultiLabelBinarizer sauvegardé dans Google Drive (à ajuster si nécessaire)
 
 # Charger le modèle DistilBERT
-model = DistilBertForSequenceClassification.from_pretrained('distilbert-base-uncased', num_labels=50)  # Remplacez `num_labels=50` par le nombre réel de labels
+num_labels = 201  #  nombre de labels correspondant a celui utilisé lors de l'entrainement du modele
+
+model = DistilBertForSequenceClassification.from_pretrained('distilbert-base-uncased', num_labels=num_labels)  # Remplacez `num_labels=50` par le nombre réel de labels
 model.load_state_dict(torch.load(model_save_path, map_location=torch.device('cpu')))
 model.eval()  # Passer le modèle en mode évaluation
 
