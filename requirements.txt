@@ -4,7 +4,7 @@ streamlit==1.20.0
 spacy
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
 importlib-metadata==5.2.0
-numpy==1.25.0
+numpy==1.23.0  # Remplacez par une version stable de numpy
 pandas==1.5.3
 joblib
 scikit-learn
