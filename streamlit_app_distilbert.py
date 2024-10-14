@@ -14,6 +14,13 @@ import nltk
 nltk.download('stopwords')
 from nltk.corpus import stopwords
 
+# Importer scikit-learn avec gestion des erreurs pour débogage
+try:
+    import sklearn
+    st.write("scikit-learn importé avec succès.")
+except ModuleNotFoundError as e:
+    st.write(f"Erreur lors de l'importation de scikit-learn: {e}")
+    
 
 # Charger le modèle spacy
 try:
@@ -25,6 +32,15 @@ except OSError:
     download("en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
     st.write("Modèle Spacy chargé avec succès après installation.")
+
+
+
+# Afficher les versions des bibliothèques
+st.write(f"Version de Spacy: {spacy.__version__}")
+st.write(f"Version de Numpy: {numpy.__version__}")
+
+
+
 
 # Définir les chemins pour charger le modèle, le tokenizer et le MultiLabelBinarizer
 model_save_path = "distilbert_model.pth"  # Chemin du modèle DistilBERT sauvegardé
