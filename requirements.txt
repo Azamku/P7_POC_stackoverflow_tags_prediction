@@ -1,10 +1,10 @@
-setuptools>=58.0.0
+setuptools>=75.0.0
 wheel
 streamlit==1.20.0
 spacy
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
 importlib-metadata==5.2.0
-numpy==1.22.0
+numpy==1.23.5
 pandas==1.5.3
 scikit-learn
 beautifulsoup4
