@@ -15,8 +15,16 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 
-# Charger le modèle anglais de SpaCy
-nlp = spacy.load('en_core_web_sm')
+# Charger le modèle spacy
+try:
+    nlp = spacy.load("en_core_web_sm")
+    st.write("Modèle Spacy chargé avec succès.")
+except OSError:
+    st.write("Le modèle Spacy 'en_core_web_sm' n'est pas installé. Installation en cours...")
+    from spacy.cli import download
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+    st.write("Modèle Spacy chargé avec succès après installation.")
 
 # Définir les chemins pour charger le modèle, le tokenizer et le MultiLabelBinarizer
 model_save_path = "distilbert_model.pth"  # Chemin du modèle DistilBERT sauvegardé
